@@ -1,3 +1,6 @@
 docker/local/wordpress/**
 docker/local/db/**
-
+docker/staging/wordpress/**
+docker/staging/db/**
+docker/staging/data/**
+.env

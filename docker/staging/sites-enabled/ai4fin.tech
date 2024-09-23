@@ -1,5 +1,5 @@
 upstream homepage {
-    server 0.0.0.0:8080 max_fails=5 fail_timeout=120s;
+    server 0.0.0.0:8080 max_fails=2 fail_timeout=10s;
 }
 
 server {
