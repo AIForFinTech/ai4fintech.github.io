@@ -49,6 +49,10 @@ server {
     }
 
     location /status/ {
+        sub_filter 'src="/assets/'  'src="/status/assets/';
+        # sub_filter 'src="http://example.com/js/' 'src="http://www.example.net/bbb/js/' ;
+        sub_filter_once off;
+
         proxy_pass http://10.0.2.4:1231/;
 
         proxy_set_header    Host                $http_host;
