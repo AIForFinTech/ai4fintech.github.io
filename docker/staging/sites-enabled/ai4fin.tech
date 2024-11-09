@@ -48,43 +48,17 @@ server {
         proxy_redirect off;
     }
 
-    location /status/ {
-        sub_filter 'src="/assets/'  'src="/status/assets/';
-        sub_filter 'src="/test/' 'src="/status/test/' ;
-        sub_filter 'src="/static/' 'src="/status/static/' ;
-        sub_filter 'src="bluewave_favicon.ico' 'src="/status/bluewave_favicon.ico' ;
-
-        sub_filter_once off;
-
-        proxy_pass http://10.0.2.4:1231/;
-
-        proxy_set_header    Host                $http_host;
-        proxy_set_header    X-Real-IP           $remote_addr;
-        proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
-
-        proxy_buffering off;
-        client_max_body_size 0;
-        proxy_read_timeout 600s;
-        proxy_redirect off;
-    }
-
-    location /assets/ {
-        proxy_pass http://10.0.2.4:1231/;
-
-        proxy_set_header    Host                $http_host;
-        proxy_set_header    X-Real-IP           $remote_addr;
-        proxy_set_header    X-Forwarded-For     $proxy_add_x_forwarded_for;
-
-        proxy_buffering off;
-        client_max_body_size 0;
-        proxy_read_timeout 600s;
-        proxy_redirect off;
-    }
-
     proxy_connect_timeout       120;
     proxy_send_timeout          120;
     proxy_read_timeout          120;
     send_timeout                120;
 
     client_max_body_size 200M;
+}
+
+server {
+    server_name status.ai4fin.tech
+    location / {
+       proxy_pass http://10.0.2.4:1231/;
+    }
 }
