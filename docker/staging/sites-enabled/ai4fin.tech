@@ -57,7 +57,7 @@ server {
 }
 
 server {
-    server_name status.ai4fin.tech
+    server_name status.ai4fin.tech;
     location / {
        proxy_pass http://10.0.2.4:1231/;
     }
