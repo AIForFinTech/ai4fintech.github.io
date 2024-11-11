@@ -55,18 +55,3 @@ server {
 
     client_max_body_size 200M;
 }
-
-server {
-    listen 443 ssl;
-
-    server_name status.ai4fin.tech;
-
-    ssl_certificate /etc/letsencrypt/live/ai4fin.tech/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/ai4fin.tech/privkey.pem;
-    include /etc/letsencrypt/options-ssl-nginx.conf;
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
-
-    location / {
-       proxy_pass http://10.0.2.4:1231/;
-    }
-}
