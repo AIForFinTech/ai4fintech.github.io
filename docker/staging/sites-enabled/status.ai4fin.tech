@@ -25,4 +25,8 @@ server {
     location / {
        proxy_pass http://10.0.2.4:1231/;
     }
+
+    location /api/v1/ {
+       proxy_pass http://10.0.2.4:1233/api/v1/;
+    }
 }
