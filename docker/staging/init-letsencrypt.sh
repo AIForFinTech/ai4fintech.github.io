@@ -1,6 +1,6 @@
 #!/bin/bash
 
-domains=(ai4fin.tech)
+domains=(ai4fin.tech, status.ai4fin.tech)
 rsa_key_size=4096
 data_path="./data/certbot"
 email="juan.barbosa@ai4fin.tech" # Adding a valid address is strongly recommended
