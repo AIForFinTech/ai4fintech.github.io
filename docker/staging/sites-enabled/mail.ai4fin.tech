@@ -23,6 +23,6 @@ server {
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
     location / {
-       proxy_pass http://0.0.0.0:8000/;
+       proxy_pass https://10.0.2.4:8000/;
     }
 }
