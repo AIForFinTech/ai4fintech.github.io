@@ -71,6 +71,3 @@ sudo docker compose run --rm --entrypoint "\
     --agree-tos \
     --force-renewal" certbot
 echo
-
-#echo "### Reloading nginx ..."
-#sudo docker compose exec nginx nginx -s reload
