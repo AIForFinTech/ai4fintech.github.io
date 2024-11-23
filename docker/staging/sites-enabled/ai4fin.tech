@@ -49,7 +49,7 @@ server {
     }
 
     location /interface/ {
-        proxy_pass http://10.0.1.4:8001/interface/;
+        proxy_pass http://10.0.1.4:8001/;
 
         proxy_set_header    Host                $http_host;
         proxy_set_header    X-Real-IP           $remote_addr;
