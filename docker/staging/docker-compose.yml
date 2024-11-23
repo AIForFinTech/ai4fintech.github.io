@@ -61,4 +61,3 @@ services:
       - "3479:3479/udp"
     volumes:
       - ./coturn/turnserver.conf:/etc/turnserver.conf:ro
-    network_mode: "host"
