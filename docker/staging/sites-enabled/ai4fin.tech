@@ -48,8 +48,8 @@ server {
         proxy_redirect off;
     }
 
-    location /interface/ {
-        sub_filter 'src="/openapi.json' 'src="/interface/openapi.json' ;
+    location /sts/interface/ {
+        sub_filter 'src="/openapi.json' 'src="/sts/interface/openapi.json' ;
         proxy_pass http://10.0.1.4:8001/;
 
         proxy_set_header    Host                $http_host;
